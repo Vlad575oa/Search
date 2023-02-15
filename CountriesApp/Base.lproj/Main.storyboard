@@ -31,8 +31,9 @@
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
-                                    <outlet property="dataSource" destination="cJ9-PA-KNd" id="WcZ-sK-DxI"/>
+                                    <outlet property="dataSource" destination="cJ9-PA-KNd" id="3bH-3I-TK3"/>
                                     <outlet property="delegate" destination="cJ9-PA-KNd" id="sO9-lq-1PK"/>
+                                    <outlet property="prefetchDataSource" destination="cJ9-PA-KNd" id="236-1m-Vht"/>
                                 </connections>
                             </tableView>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="search" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XAy-0N-nxf">
@@ -50,8 +51,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Search Country" id="QxS-D6-P0V"/>
                     <connections>
-                        <outlet property="table" destination="m3n-ei-HVi" id="bjz-IO-k5l"/>
-                        <segue destination="vgE-fW-nXx" kind="show" identifier="infoSegue" id="NFN-hh-cZu"/>
+                        <segue destination="vgE-fW-nXx" kind="show" identifier="send" id="NFN-hh-cZu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fso-Tl-ST5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -61,7 +61,7 @@
         <!--Info View Controller-->
         <scene sceneID="gvO-td-vG1">
             <objects>
-                <viewController id="vgE-fW-nXx" customClass="InfoViewController" customModule="ContriesApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="InfoStoryboard" id="vgE-fW-nXx" customClass="InfoViewController" customModule="ContriesApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rN1-5l-kMy">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -82,6 +82,10 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="c8B-Dh-kRR"/>
+                    <connections>
+                        <outlet property="imageLabel" destination="D5A-sj-Spr" id="UlG-DH-JUx"/>
+                        <outlet property="titleLabel" destination="vGJ-yW-IiO" id="Cle-Fd-QMm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OxL-Nv-QGa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
