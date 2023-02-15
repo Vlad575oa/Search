@@ -9,7 +9,7 @@ import Foundation
 
 class Countries {
     
-let shared = Countries()
+static let shared = Countries()
     
 let countriesArray = [
    Country(title: "Usa (+1)", imageName: "Usa", isActive: false),
