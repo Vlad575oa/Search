@@ -8,8 +8,15 @@
 import UIKit
 
 class SearchViewController: UIViewController , UITableViewDataSource {
-    
+ 
+    var array = Country.array()
     var filteredArray: [Country] = []
+    
+    
+    @IBOutlet weak var table: UITableView!
+    
+        
+   
     var selectedIndex: IndexPath!
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -17,36 +24,43 @@ class SearchViewController: UIViewController , UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return Countries.shared.countriesArray.count
+        return array.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-       var cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CastomTableViewCell
-        let countries = filteredArray[indexPath.row ]
-        
-        cell.selectionStyle = .none
-        cell.labelView.text = countries.title
-        cell.tableRowView.layer.borderWidth = 1
-        cell.tableRowView.layer.borderColor = UIColor(red: 0.913, green: 0.945, blue: 1, alpha: 1).cgColor
-        cell.tableRowView.layer.cornerRadius = 16
-        cell.iconImagesView.image = UIImage(named: countries.imageName)
-        
-        if selectedIndex == indexPath  {
-            cell.tableRowView.backgroundColor = UIColor(red: 0.913, green: 0.945, blue: 1, alpha: 1)
-        } else {
-            cell.tableRowView.backgroundColor = UIColor.white
-       }
-        
+       var cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        let countries = array[indexPath.row]
+        var content = cell.defaultContentConfiguration()
+        content.text = array[indexPath.row].title
+        content.image = UIImage(named: array[indexPath.row].imageName)
+        cell.contentConfiguration = content
+   
         return cell
     }
     
+ 
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        table.reloadData()
         // Do any additional setup after loading the view.
     }
     
+    
+    @IBAction func search(_ sender: UITextField) {
+   
+        if let searchText = sender.text {
+            filteredArray = searchText.isEmpty ? array : array.filter{$0.title.lowercased().contains(searchText.lowercased())
+            }
+            table.reloadData()
+        }
+    }
+    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        guard let infoVC = segue.destination as? InfoViewController else { return }
+//
+//
+//    }
 
     /*
     // MARK: - Navigation
@@ -79,12 +93,3 @@ class SearchViewController: UIViewController , UITableViewDataSource {
 //    table.reloadData()
 //
 //}
-
-class CastomTableViewCell: UITableViewCell {
-    
-    @IBOutlet weak var tableRowView: UIView!
-    @IBOutlet weak var iconImagesView: UIImageView!
-    @IBOutlet weak var labelView: UILabel!
-    
-
-}

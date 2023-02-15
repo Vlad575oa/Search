@@ -15,7 +15,6 @@
 		CEE77781299CCF5500855AB8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEE7777F299CCF5500855AB8 /* LaunchScreen.storyboard */; };
 		CEE7778B299CCFF100855AB8 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE7778A299CCFF100855AB8 /* InfoViewController.swift */; };
 		CEE7778D299CD00400855AB8 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE7778C299CD00400855AB8 /* Model.swift */; };
-		CEE7778F299CD01200855AB8 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE7778E299CD01200855AB8 /* DataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,7 +28,6 @@
 		CEE77782299CCF5500855AB8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CEE7778A299CCFF100855AB8 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		CEE7778C299CD00400855AB8 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
-		CEE7778E299CD01200855AB8 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,7 +65,6 @@
 				CE466848299CD8B900B1AB34 /* SearchViewController.swift */,
 				CEE7778A299CCFF100855AB8 /* InfoViewController.swift */,
 				CEE7778C299CD00400855AB8 /* Model.swift */,
-				CEE7778E299CD01200855AB8 /* DataManager.swift */,
 				CEE7777A299CCF5400855AB8 /* Main.storyboard */,
 				CEE7777D299CCF5500855AB8 /* Assets.xcassets */,
 				CEE7777F299CCF5500855AB8 /* LaunchScreen.storyboard */,
@@ -149,7 +146,6 @@
 			files = (
 				CE466849299CD8B900B1AB34 /* SearchViewController.swift in Sources */,
 				CEE77775299CCF5400855AB8 /* AppDelegate.swift in Sources */,
-				CEE7778F299CD01200855AB8 /* DataManager.swift in Sources */,
 				CEE7778D299CD00400855AB8 /* Model.swift in Sources */,
 				CEE77777299CCF5400855AB8 /* SceneDelegate.swift in Sources */,
 				CEE7778B299CCFF100855AB8 /* InfoViewController.swift in Sources */,

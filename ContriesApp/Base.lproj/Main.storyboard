@@ -35,11 +35,14 @@
                                     <outlet property="delegate" destination="cJ9-PA-KNd" id="sO9-lq-1PK"/>
                                 </connections>
                             </tableView>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XAy-0N-nxf">
-                                <rect key="frame" x="0.0" y="103" width="393" height="34"/>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="search" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XAy-0N-nxf">
+                                <rect key="frame" x="1" y="103" width="393" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="search:" destination="cJ9-PA-KNd" eventType="editingChanged" id="ZvW-rn-4T7"/>
+                                </connections>
                             </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Zma-d7-LLh"/>
@@ -47,6 +50,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Search Country" id="QxS-D6-P0V"/>
                     <connections>
+                        <outlet property="table" destination="m3n-ei-HVi" id="bjz-IO-k5l"/>
                         <segue destination="vgE-fW-nXx" kind="show" identifier="infoSegue" id="NFN-hh-cZu"/>
                     </connections>
                 </viewController>
@@ -69,13 +73,10 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="24Q-zS-ygs">
-                                <rect key="frame" x="114" y="228" width="149" height="43"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="D5A-sj-Spr">
+                                <rect key="frame" x="68" y="328" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Lsa-mJ-1be"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
