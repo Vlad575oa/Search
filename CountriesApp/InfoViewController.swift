@@ -19,20 +19,6 @@ class InfoViewController: UIViewController  {
         titleLabel.text = country.title
         imageLabel.image = UIImage(named: country.imageName)
     }
-    
-    
-    //protocol InfoCountryDelegate {
-    //    func setNewValue(city: Country)
-    //}
-    
-//    func setNewValue(city: Country) {
-//        titleLabel.text = country.title
-//    }
 }
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        guard let VC = segue.destination as? SearchViewController else {return}
-//        VC.delegate = self
-//
-//    }
     
   
