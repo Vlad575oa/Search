@@ -36,7 +36,7 @@
                                     <outlet property="prefetchDataSource" destination="cJ9-PA-KNd" id="236-1m-Vht"/>
                                 </connections>
                             </tableView>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="search" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XAy-0N-nxf">
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="search" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="XAy-0N-nxf">
                                 <rect key="frame" x="1" y="103" width="393" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -51,6 +51,8 @@
                     </view>
                     <navigationItem key="navigationItem" title="Search Country" id="QxS-D6-P0V"/>
                     <connections>
+                        <outlet property="tableV" destination="m3n-ei-HVi" id="HU5-ct-CMt"/>
+                        <outlet property="textFieldLabel" destination="XAy-0N-nxf" id="VDA-C5-g9v"/>
                         <segue destination="vgE-fW-nXx" kind="show" identifier="send" id="NFN-hh-cZu"/>
                     </connections>
                 </viewController>

@@ -9,6 +9,9 @@ import UIKit
 
 class SearchViewController: UIViewController , UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate {
     
+    @IBOutlet weak var textFieldLabel: UITextField!
+    @IBOutlet weak var tableV: UITableView!
+    
     var array = Country.array()
     var filteredArray: [Country] = []
     
@@ -31,31 +34,34 @@ class SearchViewController: UIViewController , UITableViewDataSource, UITableVie
     }
  
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let storyBoardInfo = storyboard?.instantiateViewController(withIdentifier: "InfoStoryboard") as? InfoViewController else {return}
-        guard var index = tableView.indexPathForSelectedRow else { return }
-        storyBoardInfo.country = array[index.row]
-        
-        performSegue(withIdentifier: "send", sender: nil)
-        
-      
-//        storyBoardInfo.ImageItem = array[indexPath.row].imageName
+        let indexPath = tableView.indexPathForSelectedRow
+        guard storyboard?.instantiateViewController(withIdentifier: "InfoStoryboard") is InfoViewController else {return}
+        let country = array[indexPath!.row]
+        performSegue(withIdentifier: "send", sender: country)
+            
+        //        delegate = storyBoardInfo
+        //        storyBoardInfo.setNewValue(city: country)
+        //        storyBoardInfo.country = country
+        }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let InvoVC = segue.destination as? InfoViewController else { return }
+        InvoVC.country = sender as? Country
     }
-    
-   
-        
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        filteredArray = array
     }
     
     
     @IBAction func search(_ sender: UITextField) {
-        
         if let searchText = sender.text {
-            filteredArray = searchText.isEmpty ? array : array.filter{$0.title.lowercased().contains(searchText.lowercased())
-            }
+            array = searchText.isEmpty ?
+            array :
+            filteredArray.filter{$0.title.lowercased().contains(searchText.lowercased())}
         }
+        tableV.reloadData()
     }
 }
 
