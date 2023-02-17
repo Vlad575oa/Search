@@ -40,26 +40,25 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <action selector="search:" destination="cJ9-PA-KNd" eventType="editingChanged" id="ZvW-rn-4T7"/>
+                                    <action selector="search:" destination="cJ9-PA-KNd" eventType="editingChanged" id="tGh-73-c3h"/>
                                 </connections>
                             </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Zma-d7-LLh"/>
                         <color key="backgroundColor" systemColor="systemGray6Color"/>
                         <constraints>
+                            <constraint firstItem="m3n-ei-HVi" firstAttribute="top" secondItem="XAy-0N-nxf" secondAttribute="bottom" constant="29" id="Bgg-st-DXi"/>
                             <constraint firstAttribute="trailing" secondItem="XAy-0N-nxf" secondAttribute="trailing" id="Nl0-oN-9EZ"/>
                             <constraint firstItem="m3n-ei-HVi" firstAttribute="trailing" secondItem="Zma-d7-LLh" secondAttribute="trailing" id="Skp-w4-n7C"/>
                             <constraint firstItem="XAy-0N-nxf" firstAttribute="top" secondItem="Zma-d7-LLh" secondAttribute="top" id="YJa-an-KEN"/>
                             <constraint firstAttribute="bottom" secondItem="m3n-ei-HVi" secondAttribute="bottom" id="b7S-6w-mZH"/>
                             <constraint firstItem="m3n-ei-HVi" firstAttribute="leading" secondItem="Zma-d7-LLh" secondAttribute="leading" id="cVw-mC-ixZ"/>
-                            <constraint firstItem="m3n-ei-HVi" firstAttribute="top" secondItem="Zma-d7-LLh" secondAttribute="top" constant="63" id="fNw-FO-eyl"/>
                             <constraint firstItem="XAy-0N-nxf" firstAttribute="leading" secondItem="Zma-d7-LLh" secondAttribute="leading" id="qZG-TE-tQX"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Country search" id="QxS-D6-P0V"/>
                     <connections>
                         <outlet property="tableView" destination="m3n-ei-HVi" id="HU5-ct-CMt"/>
-                        <outlet property="textFieldLabel" destination="XAy-0N-nxf" id="VDA-C5-g9v"/>
                         <segue destination="vgE-fW-nXx" kind="show" identifier="send" id="NFN-hh-cZu"/>
                     </connections>
                 </viewController>

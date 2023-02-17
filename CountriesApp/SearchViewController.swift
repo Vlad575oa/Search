@@ -9,7 +9,6 @@ import UIKit
 
 class SearchViewController: UIViewController , UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate {
     
-    @IBOutlet weak var textFieldLabel: UITextField!
     @IBOutlet weak var tableView: UITableView!
     
     var array = Country.array()
@@ -19,15 +18,11 @@ class SearchViewController: UIViewController , UITableViewDataSource, UITableVie
         super.viewDidLoad()
         filteredArray = array
     }
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let InvoVC = segue.destination as? InfoViewController else { return }
-        InvoVC.country = sender as? Country
-    }
     
     @IBAction func search(_ sender: UITextField) {
+        
         if let searchText = sender.text {
-            array = searchText.isEmpty ?
-            array :
+            array = searchText.isEmpty ? filteredArray :
             filteredArray.filter{$0.title.lowercased().contains(searchText.lowercased())}
         }
         tableView.reloadData()
@@ -47,7 +42,6 @@ class SearchViewController: UIViewController , UITableViewDataSource, UITableVie
         content.text = array[indexPath.row].title
         content.image = UIImage(named: array[indexPath.row].imageName)
         cell.contentConfiguration = content
-        
         return cell
     }
     
@@ -56,8 +50,15 @@ class SearchViewController: UIViewController , UITableViewDataSource, UITableVie
         guard storyboard?.instantiateViewController(withIdentifier: "InfoStoryboard") is InfoViewController else {return}
         let country = array[indexPath!.row]
         performSegue(withIdentifier: "send", sender: country)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let InvoVC = segue.destination as? InfoViewController else { return }
+        InvoVC.country = sender as? Country
         
     }
+    
+    
 }
 
    
